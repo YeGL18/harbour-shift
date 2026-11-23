@@ -1,0 +1,22 @@
+[
+  {
+    "buildingId": "1108244202",
+    "officialBuildingName": "海洋中心",
+    "displayName": "海港城（海洋中心）",
+    "displayNameEn": "Harbour City (Ocean Centre)",
+    "nameSource": "https://www.map.gov.hk/gs/api/v1.0.0/locationSearch?q=%E6%B5%B7%E6%B8%AF%E5%9F%8E",
+    "evidence": "Official search results include HARBOUR CITY and addresses naming Ocean Centre, Harbour City, 5 Canton Road.",
+    "coordinateMethod": "Unchanged centroid of official BuildingID 1108244202; retail/site alias enriches the display label only.",
+    "verifiedEntrance": false
+  },
+  {
+    "buildingId": "1108234366",
+    "officialBuildingName": "企業廣場第五期二座",
+    "displayName": "MegaBox（企業廣場第五期）",
+    "displayNameEn": "MegaBox (Enterprise Square Five)",
+    "nameSource": "https://www.map.gov.hk/gs/api/v1.0.0/locationSearch?q=MegaBox",
+    "evidence": "Official search result MegaBox gives address ENTERPRISE SQUARE FIVE and HK1980 point 839479,820123 in the same complex.",
+    "coordinateMethod": "Unchanged centroid of official BuildingID 1108234366; retail/site alias enriches the display label only.",
+    "verifiedEntrance": false
+  }
+]

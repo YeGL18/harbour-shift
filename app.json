@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "\u6e2f\u66f4",
+    "slug": "harbour-shift",
+    "version": "0.8.2",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.ygl100.harbourshift",
+      "buildNumber": "15",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "CFBundleLocalizations": [
+          "zh-HK",
+          "zh-Hant",
+          "zh-Hans",
+          "en"
+        ],
+        "NSLocationWhenInUseUsageDescription": "\u6e2f\u66f4\u4f7f\u7528\u904a\u6232\u6a21\u64ec\u4f4d\u7f6e\uff0c\u6bcb\u9808\u4f60\u5605\u771f\u5be6\u5b9a\u4f4d\u3002\u5373\u4f7f\u62d2\u7d55\u5b9a\u4f4d\uff0c\u4ea6\u53ef\u7e7c\u7e8c\u904a\u73a9\u3002"
+      }
+    },
+    "android": {
+      "package": "com.ygl100.harbourshift",
+      "versionCode": 15,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#111719"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#F6F6F6",
+          "dark": {
+            "backgroundColor": "#111214"
+          }
+        }
+      ],
+      "@maplibre/maplibre-react-native"
+    ]
+  }
+}

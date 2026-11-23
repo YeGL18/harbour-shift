@@ -1,0 +1,18 @@
+{
+  // Template only. Retain the existing deployed Worker name, namespace history
+  // and destination D1 binding when updating an established installation.
+  "name": "<EXISTING_AUTHORITY_WORKER_NAME>",
+  "main": "build/index.js",
+  "compatibility_date": "2026-11-19",
+  // Enable blind offers for newly created rooms by setting this to "1".
+  "vars": { "HARBOUR_BLIND_ORDERS": "0" },
+  "durable_objects": {
+    "bindings": [{ "name": "HARBOUR_COMPUTE", "class_name": "HarbourCompute" }]
+  },
+  "migrations": [{ "tag": "v1-harbour-compute", "new_sqlite_classes": ["HarbourCompute"] }],
+  "d1_databases": [{
+    "binding": "DB",
+    "database_name": "<EXISTING_DESTINATION_DATABASE_NAME>",
+    "database_id": "<EXISTING_DESTINATION_DATABASE_UUID>"
+  }]
+}

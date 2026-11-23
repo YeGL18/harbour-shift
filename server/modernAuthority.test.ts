@@ -1,0 +1,47 @@
+import assert from 'node:assert/strict';
+import test from 'node:test';
+import {RoomAuthority} from './authority';
+import {driverStats} from './driverStats';
+import type {RoomSession} from '../shared/protocol';
+import {defaultSimulation} from './simulation';
+import {acceptOffer,createInitialState,getVehicleGraph,quoteWorldOffer,setDispatchOffer} from '../src/game';
+
+async function match(modern=true){let now=1_800_000_000_000;const authority=new RoomAuthority({now:()=>now});const host=await authority.createRoom({nickname:'Host',featureVersion:modern?'0.5':undefined,rules:{speed:60,density:'busy',startTimeMinutes:455},setup:{vehicleId:'kam-fung',startPlaceId:'harbour-city',handoverPlaceId:'megabox'}});const guest=await authority.joinRoom(host.roomCode,{nickname:'Guest',featureVersion:modern?'0.5':undefined});const seq=new Map<string,number>();const send=(s:RoomSession,action:any)=>authority.handleCommand(s.roomCode,s.resumeToken,{seq:(seq.get(s.playerId)||0)+1,action}).then(value=>{seq.set(s.playerId,(seq.get(s.playerId)||0)+1);return value;});const start=async()=>{await send(host,{type:'ready',ready:true});await send(guest,{type:'ready',ready:true});const value=await send(host,{type:'start'});now+=3000;return value;};return{authority,host,guest,send,start,add:(ms:number)=>{now+=ms;},now:()=>now};}
+
+test('feature 0.5 rooms reject old clients cleanly; legacy rooms retain supported phases and mechanics',async()=>{
+ const modern=await match();await assert.rejects(()=>modern.authority.joinRoom(modern.host.roomCode,{nickname:'Old client'}),(e:any)=>e.code==='room_version'&&e.status===409);assert.equal((await modern.authority.readSnapshot(modern.host.roomCode,modern.host.resumeToken)).room.players.length,2);
+ const legacy=await match(false);await legacy.start();const snapshot=await legacy.authority.readSnapshot(legacy.host.roomCode,legacy.host.resumeToken);assert.equal(snapshot.room.featureVersion,'0.4');assert.equal(snapshot.ownState!.fuelQueueMode,'legacy');assert.equal(snapshot.ownState!.nextTripEnabled,false);assert.equal(snapshot.ownState!.dispatchManaged,false);assert.equal(snapshot.you.driverStats,undefined);
+ const saved=JSON.parse(legacy.authority.serializeRoom(legacy.host.roomCode)!);delete saved.metadata.room.featureVersion;const restored=new RoomAuthority({now:legacy.now});restored.deserializeRoom(JSON.stringify(saved));assert.equal((await restored.readSnapshot(legacy.host.roomCode,legacy.host.resumeToken)).room.featureVersion,'0.4');
+});
+test('managed dispatch has no phantom initial presentations and exposes real shared assignment ownership',async()=>{
+ const m=await match();await m.start();for(const session of [m.host,m.guest]){const snapshot=await m.authority.readSnapshot(session.roomCode,session.resumeToken);assert.equal(snapshot.ownState!.dispatchManaged,true);assert.equal(snapshot.ownState!.presentedOffers,snapshot.ownState!.currentOffer?1:0);}
+ for(let i=0;i<8;i++){m.add(500);await m.authority.readSnapshot(m.host.roomCode,m.host.resumeToken);}
+ const snapshots=await Promise.all([m.authority.readSnapshot(m.host.roomCode,m.host.resumeToken),m.authority.readSnapshot(m.guest.roomCode,m.guest.resumeToken)]);
+ const offers=snapshots.flatMap(s=>s.ownState!.currentOffer?[s.ownState!.currentOffer.id]:[]);assert.equal(new Set(offers).size,offers.length);assert.ok(snapshots[0].room.competition);for(const assignment of snapshots[0].room.competition!.assignments)assert.ok(snapshots[0].room.players.some(p=>p.id===assignment.playerId));
+});
+test('verified career counters use monotone presentations across withdrawal and another room history update',async()=>{
+ const m=await match(false);const initial=driverStats({offered:10,accepted:7,cancelled:1,completedTrips:6},m.now());m.authority.attachDriver(m.host.roomCode,m.host.playerId,{driverId:'verified-driver',stats:initial});await m.start();const original=await m.authority.readSnapshot(m.host.roomCode,m.host.resumeToken);
+ m.authority.deserializePlayerState(m.host.roomCode,m.host.playerId,JSON.stringify({...original.ownState,presentedOffers:3,platform:{...original.ownState!.platform,offered:1},acceptedOffers:2,cancelledTrips:1,completedTrips:1,currentOffer:null}));
+ const first=m.authority.prepareDriverDeltas(m.host.roomCode);assert.deepEqual(first[0].counters,{offered:3,accepted:2,cancelled:1,completedTrips:1});assert.ok(m.authority.prepareDriverDeltas(m.host.roomCode).every(d=>Object.values(d.counters).every(v=>v===0)));
+ m.authority.applyDriverProfiles(m.host.roomCode,[{driverId:'verified-driver',stats:driverStats({offered:18,accepted:12,cancelled:3,completedTrips:10},m.now())}]);
+ const state=JSON.parse(m.authority.serializePlayerState(m.host.roomCode,m.host.playerId)!);state.presentedOffers=4;state.platform.offered=1;m.authority.deserializePlayerState(m.host.roomCode,m.host.playerId,JSON.stringify(state));
+ assert.equal(m.authority.prepareDriverDeltas(m.host.roomCode)[0].counters.offered,1);const snapshot=await m.authority.readSnapshot(m.host.roomCode,m.host.resumeToken);assert.equal(snapshot.you.driverStats!.offered,19);assert.ok(!JSON.stringify(snapshot.room.players).includes('verified-driver'));
+ await assert.rejects(async()=>m.authority.assertDriverAvailable(m.host.roomCode,'verified-driver'),(e:any)=>e.code==='driver_in_room');
+});
+test('missed handover at exactly twelve hours is ineligible without inventing or removing income',async()=>{
+ const m=await match();await m.start();const stored=JSON.parse(m.authority.serializeRoom(m.host.roomCode)!);stored.metadata.room.clockMinutes=719.9;stored.metadata.lastTickAt=m.now();for(const entry of stored.states){if(!entry.state)continue;const game=JSON.parse(entry.state);game.clockMinutes=719.9;game.currentOffer=null;game.activeTrip=null;game.queuedTrip=null;game.navigation=null;game.acceptingOrders=false;game.parking={kind:'rest',startedAt:719};game.handoverStatus='pending';entry.state=JSON.stringify(game);}
+ const restored=new RoomAuthority({now:m.now});restored.deserializeRoom(JSON.stringify(stored));m.add(200);const snapshot=await restored.readSnapshot(m.host.roomCode,m.host.resumeToken);assert.equal(snapshot.room.clockMinutes,720);assert.equal(snapshot.room.status,'finished');const host=snapshot.room.players.find(p=>p.id===m.host.playerId)!;assert.equal(host.forfeited,true);assert.equal(snapshot.leaderboard.find(p=>p.playerId===host.id)!.rank,null);assert.equal(snapshot.ownState!.grossIncome,0);
+});
+test('queue and service peer phases remain visible without an active passenger order',()=>{
+ const game=createInitialState({seed:20261118});for(const phase of ['fuel-queue','servicing']as const){const peer=defaultSimulation.peer({...game,phase,activeTrip:null});assert.equal(peer.phase,phase);assert.equal(peer.order,undefined);}
+});
+test('fuel-unprepared handover reports the fuel requirement rather than a false location failure',async()=>{
+ const m=await match();await m.start();const stored=JSON.parse(m.authority.serializeRoom(m.host.roomCode)!);stored.metadata.room.clockMinutes=719.9;stored.metadata.lastTickAt=m.now();for(const entry of stored.states){if(!entry.state)continue;const game=JSON.parse(entry.state);game.phase='ended';game.clockMinutes=720;game.handoverStatus='missed';game.handoverFailureReason='fuel';game.currentOffer=null;entry.state=JSON.stringify(game);}
+ const restored=new RoomAuthority({now:m.now});restored.deserializeRoom(JSON.stringify(stored));m.add(200);const snapshot=await restored.readSnapshot(m.host.roomCode,m.host.resumeToken);assert.equal(snapshot.room.players.find(p=>p.id===m.host.playerId)!.forfeitReason,'未完成交更前補給');assert.equal(snapshot.leaderboard.find(p=>p.playerId===m.host.playerId)!.rank,null);
+});
+test('a queued acceptance claims the next passenger and trip-bound queued cancellation preserves the current trip',async()=>{
+ const m=await match();await m.start();await m.authority.readSnapshot(m.host.roomCode,m.host.resumeToken);let game=acceptOffer(createInitialState({seed:20261118}));assert.ok(game.activeTrip);const currentId=game.activeTrip.offer.id,graph=getVehicleGraph(game.vehicleId),edge=graph.edges[game.activeTrip.offer.tripRoute.at(-1)!];game={...game,phase:'alighting',clockMinutes:0,currentOffer:null,movement:{edgeId:edge.id,distanceOnEdgeM:edge.lengthM,nextEdgeIds:[]},activeTrip:{...game.activeTrip,phaseEndsAt:1},dispatchManaged:true};
+ const source={...game.activeTrip!.offer,id:'queued-shared-passenger',pickup:game.activeTrip!.offer.destination,destination:game.activeTrip!.offer.pickup,createdAt:0,requestedAt:0};const offer=quoteWorldOffer(game,source,{reservation:'next-trip'});assert.ok(offer);game=setDispatchOffer(game,offer);m.authority.deserializePlayerState(m.host.roomCode,m.host.playerId,JSON.stringify(game));
+ const accepted=await m.send(m.host,{type:'accept',offerId:offer.id});assert.equal(accepted.ownState!.activeTrip!.offer.id,currentId);assert.equal(accepted.ownState!.queuedTrip!.offer.id,offer.id);assert.ok(JSON.parse(m.authority.serializeRoomMetadata(m.host.roomCode)!).claims.some(([id,owner]:string[])=>id===offer.id&&owner===m.host.playerId));
+ await assert.rejects(()=>m.send(m.host,{type:'cancel-queued',tripId:currentId}),(error:any)=>error.code==='trip_changed');const cancelled=await m.send(m.host,{type:'cancel-queued',tripId:offer.id});assert.equal(cancelled.ownState!.queuedTrip,null);assert.equal(cancelled.ownState!.activeTrip!.offer.id,currentId);assert.equal(cancelled.ownState!.cancelledTrips,1);assert.equal(cancelled.ownState!.grossIncome,0);
+});

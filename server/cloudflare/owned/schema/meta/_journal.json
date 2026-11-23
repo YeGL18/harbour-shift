@@ -1,0 +1,62 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1795014000000,
+      "tag": "0000_multiplayer_rooms",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1795019000000,
+      "tag": "0001_player_presence",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1795110000000,
+      "tag": "0002_driver_accounts",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1795110000001,
+      "tag": "0003_migration_write_fence",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1795140000000,
+      "tag": "0004_driver_training",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1795165000005,
+      "tag": "0005_driver_pro",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1795165000006,
+      "tag": "0006_driver_elite",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "6",
+      "when": 1795222800007,
+      "tag": "0007_pro_single_active",
+      "breakpoints": true
+    }
+  ]
+}

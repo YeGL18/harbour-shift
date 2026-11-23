@@ -1,0 +1,5 @@
+import test from'node:test';import assert from'node:assert/strict';import worker from'./cloudflare/index';import{ADVANCED_RULES_HEADER}from'../shared/pro';
+test('the actual HTTP preflight permits advanced capability without loading data, touching D1, or accepting credentials',async()=>{
+ let queries=0;const response=await worker.fetch(new Request('https://authority.test/v1/rooms/ABC123/actions',{method:'OPTIONS',headers:{'Access-Control-Request-Headers':`Authorization,${ADVANCED_RULES_HEADER}`}}),{DB:{prepare(){queries++;throw Error('must not query');},batch:async()=>[]}}, {waitUntil(){throw Error('must not schedule');}});
+ assert.equal(response.status,204);assert.equal(queries,0);const allowed=response.headers.get('Access-Control-Allow-Headers')!.toLowerCase().split(',').map(value=>value.trim());assert.ok(allowed.includes(ADVANCED_RULES_HEADER.toLowerCase()));assert.ok(allowed.includes('x-harbour-vehicle-catalog'));assert.ok(allowed.includes('x-harbour-order-policy'));assert.equal(await response.text(),'');
+});

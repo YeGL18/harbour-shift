@@ -1,0 +1,487 @@
+[
+  {
+    "sourceRecordId": "1",
+    "name": "北角政府合署 (金偉停車場有限公司)",
+    "reason": "not-published-24hour"
+  },
+  {
+    "sourceRecordId": "2",
+    "name": "西貢政府合署停車場",
+    "reason": "not-published-24hour"
+  },
+  {
+    "sourceRecordId": "22",
+    "name": "北區政府合署停車場",
+    "reason": "not-published-24hour"
+  },
+  {
+    "sourceRecordId": "26",
+    "name": "金鐘道政府合署",
+    "reason": "not-published-24hour"
+  },
+  {
+    "sourceRecordId": "41",
+    "name": "工業貿易大樓停車場",
+    "reason": "not-published-24hour"
+  },
+  {
+    "sourceRecordId": "42",
+    "name": "屯門政府合署",
+    "reason": "not-published-24hour"
+  },
+  {
+    "sourceRecordId": "59",
+    "name": "沙田政府合署",
+    "reason": "not-published-24hour"
+  },
+  {
+    "sourceRecordId": "106",
+    "name": "香港濕地公園停車場",
+    "reason": "more-than120m-from-reachable-safe-road-anchor"
+  },
+  {
+    "sourceRecordId": "265",
+    "name": "太平洋貿易中心",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "934",
+    "name": "奧海城二期",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "949",
+    "name": "中央廣場",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "958",
+    "name": "劍橋廣場",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "967",
+    "name": "奧海城三期",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "1003",
+    "name": "中港薈",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "1042",
+    "name": "洪福邨停車場",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "1231",
+    "name": "陽光廣場",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "1246",
+    "name": "港利中心",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "1309",
+    "name": "翩滙坊停車場",
+    "reason": "more-than120m-from-reachable-safe-road-anchor"
+  },
+  {
+    "sourceRecordId": "1330",
+    "name": "屯門市廣場第二期",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "1543",
+    "name": "濠豐大廈",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "1588",
+    "name": "荃灣千色匯I",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "1855",
+    "name": "屏欣停車場",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "1861",
+    "name": "仁濟醫院訪客停車場",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "1888",
+    "name": "駿洋商場停車場",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "2224",
+    "name": "鴻力工業中心",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "2644",
+    "name": "國貿中心",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "2734",
+    "name": "奧運大樓 A",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "2782",
+    "name": "新城市中央廣場",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "3070",
+    "name": "朗晴邨",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "3784",
+    "name": "廣發商業中心",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "3898",
+    "name": "迎海薈",
+    "reason": "more-than120m-from-reachable-safe-road-anchor"
+  },
+  {
+    "sourceRecordId": "4453",
+    "name": "荃灣千色匯 II (荃灣城市廣場)",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "4654",
+    "name": "港貿中心",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "4816",
+    "name": "銀河苑",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "4819",
+    "name": "銀蔚苑",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "4822",
+    "name": "滿東邨",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "4852",
+    "name": "暉明邨",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "4876",
+    "name": "凱樂苑",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "4960",
+    "name": "尚翠苑",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "5110",
+    "name": "龍逸邨",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "5131",
+    "name": "觀塘花園大廈 (玉蓮臺)",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "5467",
+    "name": "朗善邨",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "5557",
+    "name": "胡忠大廈",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "5593",
+    "name": "水流田村公所充電站",
+    "reason": "more-than120m-from-reachable-safe-road-anchor"
+  },
+  {
+    "sourceRecordId": "5611",
+    "name": "大棠有機生態園充電站",
+    "reason": "more-than120m-from-reachable-safe-road-anchor"
+  },
+  {
+    "sourceRecordId": "5644",
+    "name": "港島東中心",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "5728",
+    "name": "毅力工業中心",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "5737",
+    "name": "訊科中心",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "5740",
+    "name": "鴻貿中心",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "5743",
+    "name": "合力工業中心",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "5887",
+    "name": "荃灣城市中心",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "5902",
+    "name": "森那美集團大廈",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "6001",
+    "name": "Park Yoho Car Park Phase 2A",
+    "reason": "more-than120m-from-reachable-safe-road-anchor"
+  },
+  {
+    "sourceRecordId": "6112",
+    "name": "河上鄉",
+    "reason": "more-than120m-from-reachable-safe-road-anchor"
+  },
+  {
+    "sourceRecordId": "6298",
+    "name": "海濱中心",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "6304",
+    "name": "綠悠雅苑",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "6310",
+    "name": "翠嶺峰",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "6331",
+    "name": "綠怡雅苑",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "8362",
+    "name": "灝景灣",
+    "reason": "more-than120m-from-reachable-safe-road-anchor"
+  },
+  {
+    "sourceRecordId": "8758",
+    "name": "仁孚停車場",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "9322",
+    "name": "新港城中心五期（海濤居）",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "9346",
+    "name": "影灣園",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "9943",
+    "name": "菁田邨",
+    "reason": "more-than120m-from-reachable-safe-road-anchor"
+  },
+  {
+    "sourceRecordId": "9970",
+    "name": "蝶翠苑",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "10051",
+    "name": "天晴邨（服務設施大樓）",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "10057",
+    "name": "裕泰苑",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "10108",
+    "name": "卓匯中心",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "10264",
+    "name": "錦暉苑",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "10702",
+    "name": "友邦廣場停車場",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "11077",
+    "name": "迎東邨停車場",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "11326",
+    "name": "都會豪庭",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "11422",
+    "name": "雷公田村49號",
+    "reason": "more-than120m-from-reachable-safe-road-anchor"
+  },
+  {
+    "sourceRecordId": "11425",
+    "name": "橫台山梁屋村充電站",
+    "reason": "more-than120m-from-reachable-safe-road-anchor"
+  },
+  {
+    "sourceRecordId": "11428",
+    "name": "公庵路300號",
+    "reason": "not-published-24hour"
+  },
+  {
+    "sourceRecordId": "11506",
+    "name": "西貢輋下村63號",
+    "reason": "more-than120m-from-reachable-safe-road-anchor"
+  },
+  {
+    "sourceRecordId": "11590",
+    "name": "體藝館停車場",
+    "reason": "more-than120m-from-reachable-safe-road-anchor"
+  },
+  {
+    "sourceRecordId": "11677",
+    "name": "主場館停車場",
+    "reason": "more-than120m-from-reachable-safe-road-anchor"
+  },
+  {
+    "sourceRecordId": "11974",
+    "name": "啟欣苑",
+    "reason": "more-than120m-from-reachable-safe-road-anchor"
+  },
+  {
+    "sourceRecordId": "11991",
+    "name": "商業廣場停車場",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "12018",
+    "name": "富蝶邨二期停車場",
+    "reason": "more-than120m-from-reachable-safe-road-anchor"
+  },
+  {
+    "sourceRecordId": "12063",
+    "name": "麗翠苑停車場",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "12069",
+    "name": "凱德苑停車場",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "12097",
+    "name": "山下村地面停車場",
+    "reason": "more-than120m-from-reachable-safe-road-anchor"
+  },
+  {
+    "sourceRecordId": "12116",
+    "name": "平治柴灣品牌中心",
+    "reason": "not-published-24hour"
+  },
+  {
+    "sourceRecordId": "12138",
+    "name": "永寧村村公所",
+    "reason": "more-than120m-from-reachable-safe-road-anchor"
+  },
+  {
+    "sourceRecordId": "12142",
+    "name": "沙田廣場",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "12166",
+    "name": "九巴荔枝角車廠",
+    "reason": "not-published-24hour"
+  },
+  {
+    "sourceRecordId": "12168",
+    "name": "逸翠園",
+    "reason": "more-than120m-from-reachable-safe-road-anchor"
+  },
+  {
+    "sourceRecordId": "12187",
+    "name": "蝦尾新村住客充電場",
+    "reason": "more-than120m-from-reachable-safe-road-anchor"
+  },
+  {
+    "sourceRecordId": "12195",
+    "name": "AGA 西沙高爾夫球場",
+    "reason": "more-than120m-from-reachable-safe-road-anchor"
+  },
+  {
+    "sourceRecordId": "12221",
+    "name": "茵翠豪庭",
+    "reason": "more-than120m-from-reachable-safe-road-anchor"
+  },
+  {
+    "sourceRecordId": "12232",
+    "name": "迪士尼探索家度假酒店",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "12332",
+    "name": "環薈中心",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "12368",
+    "name": "石壁水塘路47號",
+    "reason": "more-than120m-from-reachable-safe-road-anchor"
+  },
+  {
+    "sourceRecordId": "12376",
+    "name": "山麗苑",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "12380",
+    "name": "翠塘花園",
+    "reason": "no-supported-connector-or-verified-operator-access"
+  },
+  {
+    "sourceRecordId": "12382",
+    "name": "長江集團中心二期",
+    "reason": "more-than120m-from-reachable-safe-road-anchor"
+  }
+]

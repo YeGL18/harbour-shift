@@ -1,0 +1,6 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": { "types": ["node"], "noEmit": true },
+  "include": ["./authority.ts", "./simulation.ts", "./codec.ts", "./validation.ts", "./bootstrap.ts", "./*.test.ts", "../shared/**/*.ts"],
+  "exclude": ["./cloudflare"]
+}

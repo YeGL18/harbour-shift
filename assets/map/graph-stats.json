@@ -1,0 +1,27 @@
+{
+  "sourceFeatures": 36534,
+  "sourcePhysicalDrivable": 36867,
+  "components": [
+    27091,
+    8,
+    6,
+    4,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1,
+    1
+  ],
+  "retainedSourceSegments": 36229,
+  "compressedChains": 34380,
+  "physicalSegments": 53478,
+  "nodes": 44340,
+  "pickupNodes": 36518,
+  "maxSegmentMetres": 120.09960412960797
+}
