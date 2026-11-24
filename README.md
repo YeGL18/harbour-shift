@@ -4,7 +4,7 @@
 
 Drive a shift across Hong Kong. Choose your fares and routes, then see what you earned on your own or in a room with friends.
 
-**[《港更》官方網站 · Official game page](https://lucidtelos.com/games/harbour-shift/)**
+**[《港更》官方網站 · Official game page](https://harbour-shift.lucidtelos.com/)**
 
 ## 加入公開測試 · Join the public beta
 
