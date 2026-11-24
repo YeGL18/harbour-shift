@@ -1,5 +1,7 @@
 # 港更 · Harbour Shift
 
+**[《港更》官方網站 · Official game page](https://lucidtelos.com/games/harbour-shift/)**
+
 Drive a six-, twelve- or twenty-four-hour shift across Hong Kong. Choose from 12 vehicles, take trips, manage fuel or charging and return to a handover point. The offline map includes 37,925 named locations. The dispatch, fares, traffic and queues are game simulations.
 
 Version **0.8.2** includes **1×, 10×, 30× and 60×** speeds, day and night map themes and optional ELITE reservations for qualified drivers. Solo play works offline after the native build is installed. Multiplayer rooms share an authoritative clock and dispatch, with individual and team rankings.
