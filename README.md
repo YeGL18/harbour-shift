@@ -1,34 +1,20 @@
 # 港更 · Harbour Shift
 
+揸的士穿梭香港，自己揀單、揀路，睇吓一更可以賺幾多。可以自己巡遊，亦可以同朋友開房鬥淨收入。
+
+Drive a shift across Hong Kong. Choose your fares and routes, then see what you earned on your own or in a room with friends.
+
 **[《港更》官方網站 · Official game page](https://lucidtelos.com/games/harbour-shift/)**
 
-Drive a six-, twelve- or twenty-four-hour shift across Hong Kong. Choose from 12 vehicles, take trips, manage fuel or charging and return to a handover point. The offline map includes 37,925 named locations. The dispatch, fares, traffic and queues are game simulations.
+## 加入公開測試 · Join the public beta
 
-Version **0.8.2** includes **1×, 10×, 30× and 60×** speeds, day and night map themes and optional ELITE reservations for qualified drivers. Solo play works offline after the native build is installed. Multiplayer rooms share an authoritative clock and dispatch, with individual and team rankings.
+- **iPhone / iPad** — 先裝 Apple TestFlight，再開啟[《港更》公開測試邀請](https://testflight.apple.com/join/w3b7dMag)，按畫面指示加入同安裝。 Install TestFlight, then open the [public invitation](https://testflight.apple.com/join/w3b7dMag) on your device and follow the prompts.
+- **Android** — 用手機[下載 Android APK](https://github.com/YeGL18/harbour-shift/releases/download/v0.8.5-android-beta/harbour-shift-0.8.5.apk)，開啟下載好嘅檔案，再按提示安裝。 Download the APK, open it on your Android phone and follow the install prompt. See [Android beta releases](https://github.com/YeGL18/harbour-shift/releases) for compatibility and updates.
 
-## Build and run
+## 點玩 · How to play
 
-Use a recent Node.js release compatible with the locked Expo and React Native packages. Install dependencies before building.
+1. 揀車同開更地點。車會自動向前，去到路口可以揀方向。 Pick a vehicle and a starting point. Your car drives automatically, and you choose which way to go at junctions.
+2. 有單彈出時，決定即刻接客，定繼續巡遊等下一張。 When a request arrives, take the fare or keep cruising.
+3. 留意油量或電量同交更時間。開房同朋友玩，一更完結後比較淨收入。 Keep an eye on fuel or charge and your handover time. In multiplayer, compare net earnings at the end of the shift.
 
-```sh
-npm ci
-npm run typecheck
-npm test
-```
-
-- **iOS** requires macOS, Xcode and CocoaPods. [Build iOS](docs/ios-build.md).
-- **Android** requires a JDK and the Android SDK, platform and NDK configured in the native project. [Build Android](docs/android-build.md).
-
-Use a native Expo development build for either platform. The checked-in native projects contain the MapLibre and game audio integration.
-
-## Local multiplayer
-
-Set `EXPO_PUBLIC_MULTIPLAYER_URL` to your own authority before starting Metro or bundling the app. Standard simulator endpoints are `http://127.0.0.1:8787` on iOS and `http://10.0.2.2:8787` on Android. Physical devices can reach an independently operated HTTPS endpoint. [Start a local authority](server/README.md).
-
-## Data and attribution
-
-- © Government of the Hong Kong Special Administrative Region and respective data providers. [Map sources and reuse terms](assets/map/SOURCES.md), [named places](assets/places/NOTICE.md), [locality anchors](assets/localities/NOTICE.md) and [service locations](assets/services/NOTICE.md).
-- The bundled Harbour Sans HK subset derives from Noto Sans CJK HK. [SIL Open Font License](assets/map/OFL-NotoSansHK.txt).
-- [Original game audio](assets/sounds/NOTICE.md) and [simulated trip mechanics](docs/order-preferences.md).
-
-The repository is public for viewing. No general open-source license has been granted for the original game code and artwork. The listed datasets, font and external dependencies retain their respective terms.
+[地圖資料及鳴謝 · Map data and credits](assets/map/SOURCES.md) · Original game code and artwork remain all rights reserved.
