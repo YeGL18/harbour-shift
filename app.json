@@ -26,7 +26,8 @@
       "versionCode": 15,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#111719"
+        "backgroundColor": "#10141A",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
       }
     },
     "web": {
