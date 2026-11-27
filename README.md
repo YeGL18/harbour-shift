@@ -9,7 +9,7 @@ Drive a shift across Hong Kong. Choose your fares and routes, then see what you 
 ## 加入公開測試 · Join the public beta
 
 - **iPhone / iPad** — 先裝 Apple TestFlight，再開啟[《港更》公開測試邀請](https://testflight.apple.com/join/w3b7dMag)，按畫面指示加入同安裝。 Install TestFlight, then open the [public invitation](https://testflight.apple.com/join/w3b7dMag) on your device and follow the prompts.
-- **Android** — 用手機[下載 Android APK](https://github.com/YeGL18/harbour-shift/releases/download/v0.9.4-android-beta/harbour-shift-0.9.4.apk)，開啟下載好嘅檔案，再按提示安裝。 Download the APK, open it on your Android phone and follow the install prompt. See [Android beta releases](https://github.com/YeGL18/harbour-shift/releases) for compatibility and updates.
+- **Android** — 用手機[下載 Android APK](https://github.com/YeGL18/harbour-shift/releases/download/v0.9.5-android-beta/harbour-shift-0.9.5.apk)，開啟下載好嘅檔案，再按提示安裝。 Download the APK, open it on your Android phone and follow the install prompt. See [Android beta releases](https://github.com/YeGL18/harbour-shift/releases) for compatibility and updates.
 
 ## 點玩 · How to play
 
